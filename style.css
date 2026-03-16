@@ -1,0 +1,379 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f2f2f2;
+  --white: #ffffff;
+  --black: #111111;
+  --gray: #666666;
+  --border: #dddddd;
+  --error: #d93025;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--black);
+  min-height: 100vh;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 9999;
+  transition: 0.4s;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  width: 52px;
+  height: 52px;
+  border: 4px solid #d8d8d8;
+  border-top-color: #111111;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pagina-login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.painel-esquerdo,
+.painel-direito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.conteudo-esquerdo {
+  width: 100%;
+  max-width: 520px;
+}
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+}
+
+.conteudo-esquerdo h1 {
+  font-size: 64px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.conteudo-esquerdo p {
+  font-size: 20px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.cards-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mini-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  animation: subir 0.8s ease;
+}
+
+.mini-card i {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--black);
+  color: var(--white);
+}
+
+.mini-card strong {
+  display: block;
+  font-size: 22px;
+}
+
+.mini-card span {
+  color: var(--gray);
+  font-size: 18px;
+}
+
+.caixa-login {
+  width: 100%;
+  max-width: 460px;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  animation: subir 0.8s ease;
+}
+
+.topo-form {
+  margin-bottom: 24px;
+}
+
+.topo-form h2 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.topo-form p {
+  color: var(--gray);
+}
+
+.grupo-input {
+  margin-bottom: 18px;
+}
+
+.grupo-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.input-icone {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icone > i {
+  position: absolute;
+  left: 14px;
+  color: var(--gray);
+}
+
+.input-icone input {
+  width: 100%;
+  height: 54px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0 46px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-icone input:focus {
+  border-color: var(--black);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+}
+
+.toggle-senha {
+  position: absolute;
+  right: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--gray);
+  font-size: 16px;
+}
+
+.erro-texto {
+  display: block;
+  min-height: 18px;
+  margin-top: 6px;
+  color: var(--error);
+  font-size: 13px;
+}
+
+.linha-opcoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  gap: 12px;
+}
+
+.lembrar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.link-suave {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.botao-login {
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 16px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.botao-login:hover {
+  transform: translateY(-2px);
+}
+
+.spinner-botao {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-top: -11px;
+  margin-left: -11px;
+  opacity: 0;
+  animation: girar 0.8s linear infinite;
+}
+
+.botao-login.loading .texto-botao {
+  opacity: 0;
+}
+
+.botao-login.loading .spinner-botao {
+  opacity: 1;
+}
+
+.divisor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0 18px;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.divisor::before,
+.divisor::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.login-social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.botao-social {
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.botao-social:hover {
+  transform: translateY(-2px);
+  background: #fafafa;
+}
+
+.toast {
+  margin-top: 18px;
+  background: var(--black);
+  color: var(--white);
+  padding: 14px 16px;
+  border-radius: 14px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast.show {
+  display: flex;
+  animation: subir 0.3s ease;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 980px) {
+  .pagina-login {
+    grid-template-columns: 1fr;
+  }
+
+  .conteudo-esquerdo h1 {
+    font-size: 42px;
+  }
+
+  .conteudo-esquerdo p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .painel-esquerdo,
+  .painel-direito {
+    padding: 20px;
+  }
+
+  .caixa-login {
+    padding: 22px;
+  }
+
+  .login-social {
+    grid-template-columns: 1fr;
+  }
+
+  .linha-opcoes {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
