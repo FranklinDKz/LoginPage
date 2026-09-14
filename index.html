@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Moderno</title>
+  <meta name="description" content="Tela de login construída com HTML5, CSS3 e JavaScript puro, sem frameworks." />
+  <title>LoginPage — Franklin Dev</title>
+  <link rel="icon" type="image/png" href="assets/icon_html.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
@@ -11,7 +16,6 @@
   <div class="loading-screen" id="loadingScreen">
     <div class="loader"></div>
     <p>Carregando...</p>
-    <p>By: FranklinDKz</p>
   </div>
 
   <main class="pagina-login">
@@ -22,34 +26,34 @@
           Sistema online
         </span>
 
-        <h1>Bem-vindo (LoginPage)</h1>
+        <h1>Bem-vindo de volta</h1>
         <p>
-          Faça login para acessar sua conta, 
-          ou Crie uma.
+          Acesse sua conta para continuar de onde parou,
+          ou crie uma nova em menos de um minuto.
         </p>
 
         <div class="cards-info">
           <div class="mini-card">
             <i class="fa-regular fa-user"></i>
             <div>
-              <strong>Página de Login</strong>
-              <span>Teste</span>
+              <strong>Cadastro simples</strong>
+              <span>Crie sua conta em poucos passos</span>
             </div>
           </div>
 
           <div class="mini-card">
             <i class="fa-solid fa-shield-halved"></i>
             <div>
-              <strong>Teste1</strong>
-              <span>Login Teste</span>
+              <strong>Formulário validado</strong>
+              <span>Verificação de e-mail e senha em tempo real</span>
             </div>
           </div>
 
           <div class="mini-card">
             <i class="fa-solid fa-bolt"></i>
             <div>
-              <strong>Teste3</strong>
-              <span>Login Page Teste</span>
+              <strong>Leve e responsivo</strong>
+              <span>Construído com HTML, CSS e JavaScript puros</span>
             </div>
           </div>
         </div>
@@ -71,7 +75,8 @@
               <input
                 type="email"
                 id="email"
-                placeholder="franklindev2009@gmail.com"
+                placeholder="seuemail@exemplo.com"
+                autocomplete="email"
               />
             </div>
             <small id="erroEmail" class="erro-texto"></small>
@@ -85,6 +90,7 @@
                 type="password"
                 id="senha"
                 placeholder="Digite sua senha"
+                autocomplete="current-password"
               />
               <button type="button" class="toggle-senha" id="toggleSenha">
                 <i class="fa-regular fa-eye"></i>
@@ -103,7 +109,7 @@
           </div>
 
           <button type="submit" class="botao-login" id="botaoLogin">
-            <a class="texto-botao" href="https://www.figma.com/" style="color: white;">Entrar</a>
+            <span class="texto-botao">Entrar</span>
             <span class="spinner-botao"></span>
           </button>
 

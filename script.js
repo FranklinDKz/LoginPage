@@ -11,7 +11,7 @@ const toast = document.getElementById("toast");
 window.addEventListener("load", () => {
   setTimeout(() => {
     loadingScreen.classList.add("hidden");
-  }, 7000);
+  }, 800);
 });
 
 toggleSenha.addEventListener("click", () => {
